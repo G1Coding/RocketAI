@@ -1,4 +1,4 @@
-import { SajuData } from "@/pages";
+import { SajuData } from "@/types";
 import { RowHeader } from "./table";
 
 interface TableBodyProps {
