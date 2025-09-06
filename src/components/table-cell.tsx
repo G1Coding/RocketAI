@@ -17,7 +17,7 @@ export default function TableCell({ cellData }: TableCellProps) {
     console.log(color);
     return (
       <div
-        className={`border-2 rounded-xl flex flex-col items-center justify-center w-14 h-14 gap-0 `}
+        className={`border-2 rounded-xl flex flex-col items-center justify-center w-12 h-12 md:w-14 md:h-14 gap-0 `}
         style={{
           borderColor: color === "white" ? "black" : color,
           color: color === "white" ? "black" : "white",
@@ -25,7 +25,7 @@ export default function TableCell({ cellData }: TableCellProps) {
         }}
       >
         <div className="font-normal text-[7px]">{hanjaKo}</div>
-        <div className="font-normal text-2xl leading-none">{hanja}</div>
+        <div className="font-normal text-lg md:text-2xl leading-none ">{hanja}</div>
         <div className="font-normal text-[8px]">{hanjaLabel}</div>
       </div>
     );
