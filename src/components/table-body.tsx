@@ -1,4 +1,5 @@
 import { RowHeader, SajuData } from "@/types";
+import TableCell from "./table-cell";
 
 interface TableBodyProps {
   bodyData: SajuData[];
@@ -19,20 +20,17 @@ export default function TableBody({ bodyData, rowHeaders }: TableBodyProps) {
           <tr key={rowIndex} className="border-b-2">
             {/* 각 행의 제목 */}
             <th className="bg-orange-100 border-r-2 ">
-              <div>{rowTitle.hanja}</div>
-              <div>({rowTitle.text})</div>
+              <div className="font-normal text-sm">{rowTitle.hanja}</div>
+              <div className="font-bold text-[8px]">({rowTitle.text})</div>
             </th>
 
             {/* 데이터들 */}
             {bodyData.map((data, colIndex) => {
               const cell = data[key as keyof SajuData];
-
               return (
                 <td key={colIndex}>
                   <div>
-                    {cell.hanja && <div>{cell.hanja}</div>}
-                    {cell.text && <div>{cell.text}</div>}
-                    {cell.label && <div>{cell.label}</div>}
+                    <TableCell cellData={cell} />
                   </div>
                 </td>
               );
