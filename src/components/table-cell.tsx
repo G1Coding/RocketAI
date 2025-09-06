@@ -16,11 +16,17 @@ export default function TableCell({ cellData }: TableCellProps) {
   if (hanja && hanjaKo && hanjaLabel && color) {
     console.log(color);
     return (
-      <div className={`border-1 rounded-lg p-1`} 
-      style={{ borderColor: color, color: color === "white" ? "black" : "white", backgroundColor: color }}>
-        <div>{hanjaKo}</div>
-        <div>{hanja}</div>
-        <div>{hanjaLabel}</div>
+      <div
+        className={`border-2 rounded-xl flex flex-col items-center justify-center w-14 h-14 gap-0 `}
+        style={{
+          borderColor: color === "white" ? "black" : color,
+          color: color === "white" ? "black" : "white",
+          backgroundColor: color,
+        }}
+      >
+        <div className="font-normal text-[7px]">{hanjaKo}</div>
+        <div className="font-normal text-2xl leading-none">{hanja}</div>
+        <div className="font-normal text-[8px]">{hanjaLabel}</div>
       </div>
     );
   }
@@ -28,13 +34,13 @@ export default function TableCell({ cellData }: TableCellProps) {
   // 1. 한자(한글)
   if (hanja && hanjaKo) {
     return (
-      <div>
-        <div>{hanja}</div>
-        <div>({hanjaKo})</div>
+      <div className=" w-7 h-8 ">
+        <div className="font-normal text-[15px] leading-none text-nowrap">{hanja}</div>
+        <div className="font-bold text-[10px]">({hanjaKo})</div>
       </div>
     );
   }
 
   // 3. (없음) - 정보가 없을 때
-  return <div>(없음)</div>;
+  return <div className="font-bold text-[10px]">(없음)</div>;
 }

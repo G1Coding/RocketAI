@@ -17,10 +17,10 @@ export default function TableBody({ bodyData, rowHeaders }: TableBodyProps) {
         const key = matchingKeys[rowIndex];
 
         return (
-          <tr key={rowIndex} className="border-b-2">
+          <tr key={rowIndex} className="border-b-2 ">
             {/* 각 행의 제목 */}
-            <th className="bg-orange-100 border-r-2 ">
-              <div className="font-normal text-sm">{rowTitle.hanja}</div>
+            <th className="bg-orange-100 border-r-2 p-1.5">
+              <div className="font-normal text-[12px] leading-none">{rowTitle.hanja}</div>
               <div className="font-bold text-[8px]">({rowTitle.text})</div>
             </th>
 
@@ -28,8 +28,8 @@ export default function TableBody({ bodyData, rowHeaders }: TableBodyProps) {
             {bodyData.map((data, colIndex) => {
               const cell = data[key as keyof SajuData];
               return (
-                <td key={colIndex}>
-                  <div>
+                <td key={colIndex} className="px-2 py-3 border border-r-1 border-gray-400">
+                  <div className="flex items-center justify-center">
                     <TableCell cellData={cell} />
                   </div>
                 </td>

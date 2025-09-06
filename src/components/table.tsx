@@ -9,16 +9,16 @@ interface TableProps {
 
 export default function Table({ sajuInfo }: TableProps) {
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       <TableHeader name={sajuInfo.name} birth={sajuInfo.birth} />
 
       {/* 표 작성 */}
-      <table className="table-auto border-gray-400 border-r-2 border-b-2">
-        <thead className="bg-orange-100 border-gray-400 border-b-2">
-          <tr>
-            <th></th> {/* 첫 번째 빈 칸 */}
+      <table className=" border-r-2 border-b-2 text-center border-collapse" >
+        <thead className="bg-orange-100 border-b-2">
+          <tr className="font-normal text-xl ">
+            <th className="border-r-2"></th> {/* 첫 번째 빈 칸 */}
             {columnHeaders.map((header, index) => (
-              <th key={index}>{header}</th>
+              <th key={index} className="border-r-1 border-gray-400 p-3">{header}</th>
             ))}
           </tr>
         </thead>
