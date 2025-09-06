@@ -28,3 +28,7 @@ export interface SajuDataCell {
   label?: string;
 }
 
+export interface RowHeader {
+  text: string;
+  hanja: string;
+}

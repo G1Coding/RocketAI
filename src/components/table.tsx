@@ -6,12 +6,8 @@ import { columnHeaders, rowHeaders } from "@/data/tableHeader";
 interface TableProps {
   sajuInfo: SajuInfo;
 }
-  export interface RowHeader {
-    text: string;
-    hanja: string;
-  }
-export default function Table({ sajuInfo }: TableProps) {
 
+export default function Table({ sajuInfo }: TableProps) {
   return (
     <div>
       <TableHeader name={sajuInfo.name} birth={sajuInfo.birth} />

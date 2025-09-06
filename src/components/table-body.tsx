@@ -1,5 +1,4 @@
-import { SajuData } from "@/types";
-import { RowHeader } from "./table";
+import { RowHeader, SajuData } from "@/types";
 
 interface TableBodyProps {
   bodyData: SajuData[];
