@@ -16,16 +16,16 @@ export interface SajuData {
 }
 
 export interface SajuDataBox {
-  hanja?: string;
-  text: string;
+  hanja: string;
+  hanjaKo: string;
   color?: string;
-  label?: string;
+  hanjaLabel: string;
 }
 
 export interface SajuDataCell {
-  hanja?: string; //없음의 경우
-  text: string;
-  label?: string;
+  // 한자, 한글 모두 X -> 없음으로 표기
+  hanja?: string;
+  hanjaKo?: string;
 }
 
 export interface RowHeader {
