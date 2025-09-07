@@ -3,6 +3,7 @@ import { sajuInfo } from "@/data/sajuInfo";
 import Image from "next/image";
 import backgroundImg from "../../public/background.png";
 import { bubbleMessage } from "@/data/bubble";
+import BubbleMessage from "@/components/bubble-message";
 
 export default function Home() {
   return (
@@ -16,12 +17,11 @@ export default function Home() {
             alt="배경 이미지"
             className="w-full h-full"
           />
-          <div className="absolute top-[36.5%] left-[16.5%] h-[7.5%] w-[40%] flex items-center justify-center p-1.5 text-center text-sm md:text-lg tracking-[-0.025em] break-words">
-            {bubbleMessage[0]}
-          </div>
-          <div className="absolute top-[68%] left-[17%] h-[7.5%] w-[42%] flex items-center justify-center p-1.5 text-center text-sm md:text-lg tracking-[-0.025em] break-words">
-            {bubbleMessage[1]}
-          </div>
+
+          {/* 말풍선 메시지 */}
+          <BubbleMessage message={bubbleMessage[0]} top={36.5} left={16.5} width={39} height={7.5}/>
+          <BubbleMessage message={bubbleMessage[1]} top={68} left={17} width={42} height={7.5}/>
+
         </div>
         <div className="text-center border-3 w-full bg-orange-50">
           <Table sajuInfo={sajuInfo} />
