@@ -15,7 +15,6 @@ export default function TableCell({ cellData }: TableCellProps) {
 
   //2. 네모박스 안 한글 한자 한자(label)
   if (hanja && hanjaKo && hanjaLabel && color) {
-    console.log(color);
     return (
       <div
         className={`border-2 rounded-xl flex flex-col items-center justify-center w-12 h-12 md:w-14 md:h-14 gap-0 `}
