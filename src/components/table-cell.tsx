@@ -3,6 +3,7 @@
 // 2. 네모박스 안 한글 한자 한자(label)
 // 3. (없음) - 정보가 없을 때
 
+import { zenAntique } from "@/styles/fonts";
 import { SajuDataCell } from "@/types";
 
 interface TableCellProps {
@@ -25,7 +26,7 @@ export default function TableCell({ cellData }: TableCellProps) {
         }}
       >
         <div className="font-normal text-[7px]">{hanjaKo}</div>
-        <div className="font-normal text-lg md:text-2xl leading-none ">{hanja}</div>
+        <div className={`${zenAntique.className} font-normal text-lg md:text-2xl leading-none`}>{hanja}</div>
         <div className="font-normal text-[8px]">{hanjaLabel}</div>
       </div>
     );
@@ -35,12 +36,12 @@ export default function TableCell({ cellData }: TableCellProps) {
   if (hanja && hanjaKo) {
     return (
       <div className=" w-7 h-8 ">
-        <div className="font-normal text-[15px] leading-none text-nowrap">{hanja}</div>
-        <div className="font-bold text-[10px]">({hanjaKo})</div>
+        <div className={`${zenAntique.className} font-normal text-[15px] leading-none text-nowrap`}>{hanja}</div>
+        <div className="text-[10px]">({hanjaKo})</div>
       </div>
     );
   }
 
   // 3. (없음) - 정보가 없을 때
-  return <div className="font-bold text-[10px]">(없음)</div>;
+  return <div className="text-[10px]">(없음)</div>;
 }

@@ -8,11 +8,6 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        nanum: ['"Nanum Pen Script"', "sans-serif"],
-        zen: ['"Zen Antique"', "serif"],
-        asi: ['"Asi Gothic"', "sans-serif"],
-      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

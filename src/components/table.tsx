@@ -2,6 +2,7 @@ import { SajuInfo } from "@/types";
 import TableBody from "./table-body";
 import TableHeader from "./table-header";
 import { columnHeaders, rowHeaders } from "@/data/tableHeader";
+import { zenAntique } from "@/styles/fonts";
 
 interface TableProps {
   sajuInfo: SajuInfo;
@@ -18,7 +19,7 @@ export default function Table({ sajuInfo }: TableProps) {
             <tr className=" ">
               <th className="border-r-2 px-3 min-w-[40px] md:min-w-[70px]"></th> {/* 첫 번째 빈 칸 */}
               {columnHeaders.map((header, index) => (
-                <th key={index} className="border-r-1 border-gray-400 p-1 md:p-3 font-normal sm-text-lg md:text-xl">
+                <th key={index} className={`${zenAntique.className} border-r-1 border-gray-400 p-1 md:p-3 font-normal sm-text-lg md:text-xl`}>
                   {header}
                 </th>
               ))}
